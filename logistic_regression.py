@@ -2,14 +2,14 @@
 #####################  Logistic Regression - Python ######################
 ##########################################################################
 
---------------------------------------------------------------------
+#--------------------------------------------------------------------
 # Step : 1 Importing the libraries
---------------------------------------------------------------------
+#--------------------------------------------------------------------
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 
---------------------------------------------------------------------
+#--------------------------------------------------------------------
 # Step : 2 Data Preprocessing
 #-------------------------------------------------------------------
         #2(a) Importing the dataset
@@ -27,9 +27,9 @@ sc = StandardScaler()
 Var_I_train = sc.fit_transform(Var_I_train)
 Var_I_test = sc.transform(Var_I_test)
 
--------------------------------------------------------------------
+#-------------------------------------------------------------------
 # Step : 3 Data modelling
--------------------------------------------------------------------
+#-------------------------------------------------------------------
         #3(a) Fitting Logistic Regression to the Training set
 from sklearn.linear_model import LogisticRegression
 Var_LR = LogisticRegression(random_state = 0)
@@ -42,9 +42,9 @@ Var_D_pred = Var_LR.predict(Var_I_test)
 from sklearn.metrics import confusion_matrix
 Var_cm = confusion_matrix(Var_D_test, Var_D_pred)
 
--------------------------------------------------------------------
+#-------------------------------------------------------------------
 # Data Visualising for the Training set results
--------------------------------------------------------------------
+#-------------------------------------------------------------------
 from matplotlib.colors import ListedColormap
 Var_I_set, Var_D_set = Var_I_train, Var_D_train
 X1, X2 = np.meshgrid(np.arange(start = Var_I_set[:, 0].min() - 1, stop = Var_I_set[:, 0].max() + 1, step = 0.01),
@@ -62,9 +62,9 @@ plt.ylabel('Estimated Salary')
 plt.legend()
 plt.show()
 
------------------------------------------------------------------
+#-----------------------------------------------------------------
 # Data Visualising for the Test set results
------------------------------------------------------------------
+#-----------------------------------------------------------------
 from matplotlib.colors import ListedColormap
 Var_I_set, Var_D_set = Var_I_test, Var_D_test
 X1, X2 = np.meshgrid(np.arange(start = Var_I_set[:, 0].min() - 1, stop = Var_I_set[:, 0].max() + 1, step = 0.01),
