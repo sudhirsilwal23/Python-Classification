@@ -34,7 +34,7 @@ Var_I_test = sc.transform(Var_I_test)
         #3(a) Fitting K-NN to the Training set
 from sklearn.neighbors import KNeighborsClassifier
 Var_KNN = KNeighborsClassifier(n_neighbors = 5, metric = 'minkowski', p = 2)
-Var_KNN.fit(X_train, y_train)
+Var_KNN.fit(Var_I_train, Var_D_train)
 
         #3(b) Predicting the Test set results
 Var_D_pred = Var_KNN.predict(Var_I_test)
