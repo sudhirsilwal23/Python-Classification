@@ -38,7 +38,7 @@ VAR_NB = GaussianNB()
 VAR_NB.fit(Var_I_train, Var_D_train)
 
         #3(b) Predicting the Test set results
-Var_D_pred = Var_LNB.predict(Var_I_test)
+Var_D_pred = VAR_NB.predict(Var_I_test)
 
         #3(c) Making the Confusion Matrix
 from sklearn.metrics import confusion_matrix
